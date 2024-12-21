@@ -6,12 +6,12 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "remixicon/fonts/remixicon.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom"; // Correct usage of BrowserRouter
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter> {/* This should be in index.js */}
       <App />
     </BrowserRouter>
   </React.StrictMode>

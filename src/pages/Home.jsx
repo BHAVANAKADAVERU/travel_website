@@ -13,14 +13,22 @@ import FeaturedTourList from '../components/Featured-tours/FeaturedTourList'
 import MasonryImagesGallery from '../components/image-gallery/MasonryImagesGallery'
 import Testimonials from '../components/Testimonial/Testimonials'
 import Newsletter from '../shared/Newsletter'
+import logo from '../assets/images/logo.png'
 
 const Home = () => {
   return (
     <>
     <Container>
       <Row>
+      <div className="main-heading">
+               <div className="logo">
+                  <img src={logo} alt="" />
+                </div>
+        </div>
         <Col  lg="6">
+        
         <div className="hero__content">
+          
           <div className="hero__subtitle d-flex align-items-center">
             <Subtitle subtitle={'Know Before You Go'}/>
             <img src={worldImg} alt="" />

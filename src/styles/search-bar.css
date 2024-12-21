@@ -1,36 +1,142 @@
-
-
-.search__bar{
+/* Basic styling for the search bar container */
+.search__bar {
     padding: 0.5rem 1rem;
     border-radius: 50px;
-    box-shadow: rgba(17,12, 46, 0.15) 0px 48px 100px 0px;
-    width: max-content;
+    box-shadow: rgba(211, 211, 212, 0.15) 0px 48px 100px 0px;
+    width: 100%;
+    max-width: 1200px; /* Ensure the search bar doesn't stretch too wide on large screens */
     margin-top: 50px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
 }
-.form__group span{
+
+/* Styling for each input and form group */
+.form__group {
+    flex: 1;
+    min-width: 220px; /* Ensure input fields don’t get too small */
+    margin-bottom: 15px; /* Space between the form groups */
+}
+
+/* Styling the icons inside the form groups */
+.form__group span {
     font-size: 1.8rem;
     color: #ee6e6e;
 }
-.form__group input{
+
+/* Styling input fields inside the form groups */
+.form__group input {
     border: none;
     font-size: 0.9rem;
     color: var(--heading-color);
     font-weight: 500;
+    width: 100%;
+    padding: 0.8rem;
+    border-radius: 8px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
 }
-.form__group input:focus{
-outline: none;
+
+/* When the input is focused, remove the border */
+.form__group input:focus {
+    outline: none;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow on focus */
 }
-.form__group h6{
-    margin-bottom: 0;
+
+/* Heading text in each form group */
+.form__group h6 {
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: var(--text-color); /* Use a color variable for better consistency */
 }
+
+/* Specific form group for the first elements (like Location, Distance) */
 .form__group-fast {
-    border-right: 2px solid #ddd;
+    border-right: 2px solid #ddd; /* Add separation between form fields */
 }
-.search__icon i{
-font-size: 1.6rem;
-padding: 0.5rem;
-background: var(--secondary-color);
-color: #fff;
-border-radius: 10px 5px 10px 5px;
-cursor: pointer;
+
+/* Adjusting the search icon button */
+.search__icon i {
+    font-size: 1.6rem;
+    padding: 0.6rem;
+    background: var(--secondary-color);
+    color: #ffffff;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Change color on hover */
+.search__icon i:hover {
+    background: var(--primary-color);
+    color: #a08383;
+}
+
+/* Styling for the slider */
+.price-slider {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* Price range text */
+.price-range-text {
+    margin-top: 5px;
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--text-color); /* Ensure consistent color usage */
+}
+
+/* React Select Dropdown Adjustments */
+.react-select__control {
+    min-width: 220px; /* Make the dropdown as wide as the input fields */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .search__bar {
+        flex-direction: column; /* Stack the form groups vertically on smaller screens */
+        gap: 15px;
+    }
+
+    .form__group {
+        min-width: 100%; /* Allow form groups to take up the full width */
+    }
+
+    .form__group-fast {
+        border-right: none; /* Remove the border for smaller screens */
+    }
+
+    .search__icon i {
+        padding: 0.8rem;
+        font-size: 1.4rem;
+    }
+}
+
+/* Additional Customizations */
+@media (max-width: 576px) {
+    .search__bar {
+        margin-top: 30px; /* Reduced top margin for very small screens */
+    }
+
+    .form__group input {
+        font-size: 0.8rem; /* Smaller font size for mobile screens */
+        padding: 0.7rem; /* Reduced padding for a more compact layout */
+    }
+
+    .form__group h6 {
+        font-size: 0.8rem; /* Adjust heading size */
+    }
+
+    .price-range-text {
+        font-size: 0.9rem; /* Ensure the text size is still readable on mobile */
+    }
+
+    .search__icon i {
+        padding: 0.7rem;
+        font-size: 1.5rem; /* Adjust icon size for smaller screens */
+    }
 }
